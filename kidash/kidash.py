@@ -667,7 +667,7 @@ def import_item_json(elastic, type_, item_id, item_json, data_sources=None,
         if not item_id.startswith(type_ + ":"):
             # Inside a json dashboard ids don't include type_
             item_id = type_ + ":" + item_id
-        item_json_url = elastic.index_url + "/doc/" + item_id
+        item_json_url = elastic.index_url + "/_doc/" + item_id
 
         if type_ == 'dashboard':
             # Vis height of 1 is too small for kibana6
